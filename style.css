@@ -1,0 +1,182 @@
+/* Body adjustments for fixed navbar */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 150px; /* Prevents top navbar from covering the weather card */
+  padding-bottom: 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.8s ease;
+  margin: 0;
+}
+
+/* Glassmorphism Navbar pinned to top */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: box-shadow 0.6s ease;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Restrict inner navbar width on large screens for clean alignment */
+.max-width-container {
+
+  max-width: 1500px;
+}
+.blueName{
+    color: #0675f5;
+}
+
+/* Nav Link Hover Effect */
+.nav-link-custom {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  opacity: 0.7;
+}
+.about-container {
+  display: inline-block;
+}
+
+.about-card {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  width: 270px;
+  background: rgba(20, 25, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  z-index: 1050;
+  
+  /* Initial hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
+}
+
+/* Little indicator arrow on top of popup card */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(20, 25, 40, 0.95) transparent;
+}
+
+/* Show popup on hover */
+.about-container:hover .about-card {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/*  */
+.SearchBar{
+    display: flex;
+    justify-content: space-between;
+}
+/* Weather Title */
+.weather-title {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* Glassmorphism Search Bar Container */
+.search-bar-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Glow Effect when interacting with Search Bar */
+.search-bar-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #00c6ff;
+  box-shadow: 0 8px 25px rgba(0, 198, 255, 0.35) !important;
+}
+
+/* Search Input Customization */
+.custom-input {
+  box-shadow: none !important;
+  font-size: 1.05rem;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.custom-input:focus {
+  color: #ffffff;
+}
+
+/* Search Button Style */
+.btn-search {
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-search:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.6);
+  background: linear-gradient(135deg, #005bb5 0%, #00a2d8 100%);
+}
+
+.btn-search:active {
+  transform: translateY(0);
+}
+
+/* Weather Details Card with Unsplash Background */
+.weather-box {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1500&q=85');
+  background-size: cover;
+  background-position: center;
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+/* Custom Footer Styling */
+footer{
+  margin-top: 200px;
+  margin-bottom: -20px;
+}
+.custom-footer {
+  background: rgba(15, 32, 39, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.extra-small {
+  font-size: 0.8rem;
+}
+footer h6{
+  color: #0675f5;
+}
+
+.custom-footer a:hover {
+  color: #00c6ff !important;
+}
+
